@@ -5,7 +5,7 @@ package core
 import (
 	"math/big"
 
-	"github.com/ETCDEVTeam/sputnikvm-ffi/go/sputnikvm"
+	"github.com/etclabscore/sputnikvm-ffi/go/sputnikvm"
 	"github.com/ethereumproject/go-ethereum/common"
 	"github.com/ethereumproject/go-ethereum/core/state"
 	"github.com/ethereumproject/go-ethereum/core/types"

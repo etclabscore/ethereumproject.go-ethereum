@@ -34,8 +34,8 @@
   name = "github.com/ethereumproject/ethash"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/ETCDEVTeam/sputnikvm-ffi"
+  branch = "sputnikvm-0.11-beta"
+  name = "github.com/etclabscore/sputnikvm-ffi"
 
 [[constraint]]
   name = "github.com/gizak/termui"
