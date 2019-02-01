@@ -71,7 +71,7 @@
 
 [[constraint]]
   name = "github.com/rjeczalik/notify"
-  revision = "c31e5f2cb22b3e4ef3f882f413847669bf2652b9"
+  revision = "142bf8bda30ec06f51c3227d6a10f0a77c586398"
 
 [[constraint]]
   branch = "master"
