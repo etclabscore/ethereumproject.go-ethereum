@@ -37,7 +37,7 @@ func ApplyMultiVmTransaction(config *ChainConfig, bc *BlockChain, gp *GasPool, s
 		Caller:   from,
 		GasPrice: tx.GasPrice(),
 		GasLimit: tx.Gas(),
-		Address:  tx.To(),
+		Address:  tx.To().Bytes(),
 		Value:    tx.Value(),
 		Input:    tx.Data(),
 		Nonce:    new(big.Int).SetUint64(tx.Nonce()),
@@ -173,7 +173,12 @@ Loop:
 		}
 	}
 	for _, log := range vm.Logs() {
-		statelog := evm.NewLog(log.Address, log.Topics, log.Data, header.Number.Uint64())
+		// Convert [][32]byte topic list into []common.Hash topic list
+		topics := make([]common.Hash, len(log.Topics))
+		for i := 0; i < len(log.Topics); i += 1 {
+			topics = append(topics, common.Hash(log.Topics[i]))
+		}
+		statelog := evm.NewgLog(log.Address, topics, log.Data, header.Number.Uint64())
 		statedb.AddLog(*statelog)
 	}
 	usedGas := vm.UsedGas()
